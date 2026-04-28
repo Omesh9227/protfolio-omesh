@@ -18,10 +18,9 @@ const ProjectCard = ({ title, description, image, tech, demo, code }) => {
           className='w-full h-60 object-cover transform group-hover:scale-110 transition duration-500'
         />
 
-        {/* 🔥 Overlay */}
-        <div className='absolute inset-0 bg-black/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center gap-4'>
+        {/* 🔥 Desktop Overlay ONLY */}
+        <div className='hidden md:flex absolute inset-0 bg-black/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition duration-500 items-center justify-center gap-4'>
 
-          {/* Demo */}
           {demo && (
             <a
               href={demo}
@@ -34,7 +33,6 @@ const ProjectCard = ({ title, description, image, tech, demo, code }) => {
             </a>
           )}
 
-          {/* Code */}
           {code && (
             <a
               href={code}
@@ -55,7 +53,7 @@ const ProjectCard = ({ title, description, image, tech, demo, code }) => {
         <p className='text-gray-400 mb-4'>{description}</p>
 
         {/* Tech Stack */}
-        <div className='flex flex-wrap gap-2'>
+        <div className='flex flex-wrap gap-2 mb-4'>
           {tech.map((item, index) => (
             <span
               key={index}
@@ -64,6 +62,31 @@ const ProjectCard = ({ title, description, image, tech, demo, code }) => {
               {item}
             </span>
           ))}
+        </div>
+
+        {/* 🔥 Mobile Buttons ONLY */}
+        <div className='flex gap-3 md:hidden'>
+          {demo && (
+            <a
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className='flex-1 text-center px-4 py-2 bg-purple text-white rounded-lg'
+            >
+              Live
+            </a>
+          )}
+
+          {code && (
+            <a
+              href={code}
+              target="_blank"
+              rel="noopener noreferrer"
+              className='flex-1 text-center px-4 py-2 border border-white text-white rounded-lg'
+            >
+              Code
+            </a>
+          )}
         </div>
       </div>
 
