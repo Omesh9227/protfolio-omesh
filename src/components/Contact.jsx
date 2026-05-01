@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+import toast from 'react-hot-toast'
 
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
@@ -11,26 +12,28 @@ const Contact = () => {
   const [loading, setLoading] = useState(false)
 
   const sendEmail = (e) => {
-    e.preventDefault()
-    setLoading(true)
+  e.preventDefault()
+  setLoading(true)
 
-    emailjs.sendForm(
-      'service_hkdfebf',
-      'template_slns86l',
-      form.current,
-      'XIB8LJfjbCcrcSlm2'
-    )
-    .then(() => {
-      toast.success('Message sent successfully ✅')
-      form.current.reset()
-      setLoading(false)
-    })
-    .catch((error) => {
-      console.error(error)
-      toast.error('Something went wrong ❌')
-      setLoading(false)
-    })
-  }
+  const toastId = toast.loading('Sending message...')
+
+  emailjs.sendForm(
+    'service_hkdfebf',
+    'template_slns86l',
+    form.current,
+    'XIB8LJfjbCcrcSlm2'
+  )
+  .then(() => {
+    toast.success('Message sent successfully', { id: toastId })
+    form.current.reset()
+    setLoading(false)
+  })
+  .catch((error) => {
+    console.error(error)
+    toast.error('Something went wrong', { id: toastId })
+    setLoading(false)
+  })
+}
 
   return (
     <motion.div

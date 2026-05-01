@@ -8,14 +8,21 @@ import { Toaster } from 'react-hot-toast'
 const App = () => {
   return (
     <div>
-      <Toaster 
+      <Toaster
         position="top-right"
+        reverseOrder={false}
         toastOptions={{
           style: {
             background: '#0f172a',
             color: '#fff',
-            border: '1px solid #8B5CF6'
-          }
+            border: '1px solid #8B5CF6',
+          },
+          success: {
+            iconTheme: {
+              primary: '#7aff46',
+              secondary: '#3a3333',
+            },
+          },
         }}
       />
       <Navbar />
