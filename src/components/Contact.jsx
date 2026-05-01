@@ -21,13 +21,13 @@ const Contact = () => {
       'XIB8LJfjbCcrcSlm2'
     )
     .then(() => {
-      alert('Message sent successfully 🚀')
+      toast.success('Message sent successfully ✅')
       form.current.reset()
       setLoading(false)
     })
     .catch((error) => {
       console.error(error)
-      alert('Something went wrong ❌')
+      toast.error('Something went wrong ❌')
       setLoading(false)
     })
   }
@@ -60,7 +60,7 @@ const Contact = () => {
                 <label className='block text-gray-300 mb-2'>Your Name</label>
                 <input 
                   type="text"
-                  name="name"   // ✅ must match EmailJS
+                  name="name"   
                   required
                   placeholder="Full Name"
                   className='w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none focus:border-purple'
@@ -71,7 +71,7 @@ const Contact = () => {
                 <label className='block text-gray-300 mb-2'>Email</label>
                 <input 
                   type="email"
-                  name="email"   // ✅ must match EmailJS
+                  name="email"   
                   required
                   placeholder="your@email.com"
                   className='w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none focus:border-purple'
@@ -114,7 +114,7 @@ const Contact = () => {
               <div className='text-purple text-2xl mr-4'><FaEnvelope /></div>
               <div>
                 <h3 className='text-lg font-semibold'>Email</h3>
-                <p className='text-gray-400'>omeshmandavi750@example.com</p>
+                <p className='text-gray-400'>omeshmandavi750@gmail.com</p>
               </div>
             </div>
 
