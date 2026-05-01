@@ -25,8 +25,20 @@ const Navbar = () => {
     }
   }, [showMenu])
 
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [showMenu])
+
   return (
-    <nav className='fixed w-full z-50 bg-dark-100/90 backdrop-blur-sm py-4 px-8 shadow-lg'>
+    <nav className='fixed w-full z-50 bg-dark-100 py-4 px-8 shadow-lg'>
       
       {/* Top Bar */}
       <div className='container mx-auto flex justify-between items-center'>
@@ -54,7 +66,10 @@ const Navbar = () => {
       
       {/* 🔥 Background Blur Overlay */}
       {showMenu && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-md z-40"></div>
+          <div
+            className="fixed inset-0 bg-[#0f172a]/90 z-40"
+            onClick={() => setShowMenu(false)}
+          />
        )}
 
       {/* Full Screen Mobile Menu */}
