@@ -153,7 +153,7 @@ export const workData = [
     color: "purple"
   },
   {
-    role: "Web Development Intern",
+    role: "Software Engineer Intern",
     company: "The Spark Foundation",
     duration: "May 2023 - Jul 2023",
     description:
