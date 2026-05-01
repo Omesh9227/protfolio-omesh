@@ -78,7 +78,7 @@ export const skills = [
     title: 'Tools & Technologies',
     icon: FaTools,
     description: 'Essential tools and technologies I use in my development workflow.',
-    tags: ['Git & GitHub', 'VSCode', 'IntelliJ', 'Webpack', 'Figma', 'Jest']
+    tags: ['Git & GitHub', 'VSCode', 'IntelliJ', 'Webpack', 'Figma', 'Jest', 'Jira', 'Confluence']
   }
 ];
 
